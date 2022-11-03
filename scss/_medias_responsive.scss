@@ -1,0 +1,100 @@
+@media (min-width: $mini-mobile) {}
+@media (min-width: $big-mobile) {}
+
+@media (min-width: $mini-tablet) {
+  body{
+    background-color: $Very-Dark-purple;
+    background-size: 100vw;
+    background-position: bottom;
+    background-image: url("../images/bg-desktop-modified.png");
+  }
+  .container{ 
+    margin: 0 auto;
+    @include flexbox(row, nowrap, center, flex-end,1rem);
+    min-height: auto;
+    min-width: 8rem;
+    width: 100%;
+  }
+  .card{
+    position: relative;
+    border-radius: .5rem;
+    &--logo{
+      @include flexbox(column, wrap, center, end, 1rem);
+      min-width: 10rem;
+      border-top-left-radius: 6rem;
+    }
+    &--storage{
+      border-top-right-radius: 6rem;
+      padding: 2rem;
+      min-width: 30rem;
+    }
+    &__btn{
+      position: relative;
+      &:hover{
+        .card__tooltip--box{
+          transition: .5s ease;
+          transform: translate(-50%,-120%) scale(1);
+        }
+      }
+    }
+    &__box {
+      justify-content: space-between;
+      width: 100%;
+    }
+    &__tooltip{
+      background: linear-gradient(90deg, $Gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      font-weight: 700;
+      text-transform: capitalize;
+
+      &--box{
+        display: block;
+        opacity: 1;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        background-color: $Pale-Blue;
+        position: absolute;
+        transform: translate(-50%,-120%) scale(0);
+        transform-origin: bottom right;
+        transition: .5s ease;
+
+        &::before{
+          content: '';
+          position: absolute;
+          border-right: 10px solid $Pale-Blue;
+          border-top: 10px solid $Pale-Blue;
+          border-left: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          bottom: -14px;
+          right: 0;
+        }
+        
+      }
+    }
+  }
+  .msg{
+    right: 0;
+    bottom: 7rem;
+    transform: translate(-50%,-50%);
+    animation: storageLeft 2s ease;
+    transition: all ease 1s;
+    &::before{
+      content: "";
+      position: absolute;
+      border-right: 20px solid $Pale-Blue;
+      border-top: 20px solid $Pale-Blue;
+      border-left: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      bottom: -30px;
+      right: 0
+    }
+  }
+
+}
+
+@media (min-width: $tablet) {}
+@media (min-width: $laptop) {}
+@media (min-width: $desktop) {}

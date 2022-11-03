@@ -1,0 +1,12 @@
+@import "_reset.scss","_mixins.scss","_attribution.scss","keyframes.scss";
+
+body {
+  background-image: url("../images/bg-mobile-modified.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  @include center-grid;
+}
+
+@import "_cards.scss";
+
+@import "medias_responsive";

@@ -1,0 +1,120 @@
+.container {
+  @include flexbox(column, nowrap, center, center,1rem);
+  max-width: 100%;
+  
+}
+.card {
+  background-color:$Dark-purple;
+  width: 100%;
+  border-radius: 1rem;
+  transition: .5s ease;
+
+  &__box {
+    @include flexbox(row, nowrap, start, center, 1.3rem);
+    // border-top: 1px solid $Pale-Blue;
+
+    &--text {
+      @include flexbox(row, nowrap, space-between, center);
+    }
+  }
+  &__btn {
+    background-color: $Very-Dark-purple;
+    border-radius: .5rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+  }
+  &__description {
+    width: 100%;
+    text-align: center;
+    &--strong {
+      font-weight: 600;
+    }
+    &--2{
+      font-size: .8rem;
+      text-align: left;
+    }
+  }
+  &__img {
+    width: 8rem;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-size: .8rem;
+    font-weight: 600;
+  }
+  &--logo {
+    padding: 2rem;
+    border-top-right-radius: 5rem;
+    animation: moveinside 1s ease;
+    transition: all ease 1s;
+  }
+  &--storage {
+    padding: 2rem 2rem 3rem 2rem;
+    position: relative;
+    animation: moveoutside 1s ease;
+    transition: all ease 1s;
+  }
+  &__tooltip{
+    &--box{
+      display: none;
+      opacity: 0;
+    }
+  }
+}
+.bar {
+  width: 100%;
+  background-color: $Very-Dark-purple;
+  padding: .2rem;
+  border-radius: 1rem;
+  margin: 1rem 0 .3rem 0;
+  &__ball {
+    width: .7rem;
+    height: .7rem;
+    background-color: $Pale-Blue;
+    border-radius: 1rem;
+  }
+  &__color {
+    width: 75%;
+    background-image:linear-gradient(90deg, $Gradient1);
+    padding: .15rem;
+    @include flexbox(row, nowrap, flex-end, center);
+    border-radius: 1rem;
+    animation: loadingBar 3s ease;
+    transition: all ease 1s;
+  }
+}
+.msg {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+  padding: 1rem 1.5rem;
+  border-radius: .7rem;
+  background-color: $Pale-Blue;
+  color: $Very-Dark-purple;
+  &__text {
+    @include flexbox(row, nowrap, center, center);
+    &--num {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 2.5rem;
+      background: linear-gradient(90deg, $Gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    &--size {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $Dark-purple;
+    }
+  }
+}
