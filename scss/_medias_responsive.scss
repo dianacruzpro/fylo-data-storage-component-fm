@@ -10,23 +10,30 @@
   }
   .container{ 
     margin: 0 auto;
-    @include flexbox(row, nowrap, center, flex-end,1rem);
-    min-height: auto;
+    @include flexbox(row, nowrap, center, flex-end);
     min-width: 8rem;
-    width: 100%;
+    max-width: 50rem;
+    margin: 0 1.5rem;
+    @include grid(5,1rem);
+    transition: .5s ease;
   }
   .card{
     position: relative;
     border-radius: .5rem;
+    min-width: 10rem;
+    width: 30rem;
+    transition: .5s ease;
     &--logo{
+      grid-column: 1/2;
       @include flexbox(column, wrap, center, end, 1rem);
-      min-width: 10rem;
       border-top-left-radius: 6rem;
+      max-width: 15rem;
     }
     &--storage{
+      grid-column: 2/-1;
       border-top-right-radius: 6rem;
       padding: 2rem;
-      min-width: 30rem;
+      width: 100%;
     }
     &__btn{
       position: relative;
@@ -36,6 +43,9 @@
           transform: translate(-50%,-120%) scale(1);
         }
       }
+    }
+    &__description{
+      text-align: left;
     }
     &__box {
       justify-content: space-between;
